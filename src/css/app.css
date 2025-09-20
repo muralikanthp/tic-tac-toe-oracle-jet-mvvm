@@ -6,6 +6,8 @@
         This is where any of your application specific styles should be included
 */
 
+@import 'views/tic-tac-toe.css';
+
 .send-off-screen {
   position: absolute;
   left: -10000px;
@@ -30,6 +32,24 @@ html[dir="rtl"] .demo-oracle-icon {
 }
 
 .demo-oracle-icon:before {
+  display:inline
+}
+
+.mini-games-logo {
+  width:137px;
+  height:45px;
+  content:url("images/mini-games.png")
+}
+
+html:not([dir="rtl"]) .mini-games-logo {
+  padding-right:4px
+}
+
+html[dir="rtl"] .mini-games-logo {
+  padding-left:4px
+}
+
+.mini-games-logo:before {
   display:inline
 }
 

@@ -60,10 +60,8 @@ class RootViewModel {
     }
 
     const navData = [
-      { path: "", redirect: "dashboard" },
-      { path: "dashboard", detail: { label: "Dashboard", iconClass: "oj-ux-ico-bar-chart" } },
-      { path: "incidents", detail: { label: "Incidents", iconClass: "oj-ux-ico-fire" } },
-      { path: "customers", detail: { label: "Customers", iconClass: "oj-ux-ico-contact-group" } },
+      { path: "", redirect: "tic-tac-toe" },
+      { path: "tic-tac-toe", detail: { label: "Tic Tac Toe", iconClass: "oj-ux-ico-bar-chart" } },
       { path: "about", detail: { label: "About", iconClass: "oj-ux-ico-information-s" } }
     ];
     // router setup
@@ -91,10 +89,10 @@ class RootViewModel {
     // header
 
     // application Name used in Branding Area
-    this.appName = ko.observable("App Name");
+    this.appName = ko.observable("Mini Games");
     // user Info used in Global Navigation area
 
-    this.userLogin = ko.observable("john.hancock@oracle.com");
+    this.userLogin = ko.observable("tictactoe@minigames.com");
     // footer
     this.footerLinks = [
       {name: 'About Oracle', linkId: 'aboutOracle', linkTarget:'http://www.oracle.com/us/corporate/index.html#menu-about'},
@@ -104,7 +102,7 @@ class RootViewModel {
       { name: "Your Privacy Rights", id: "yourPrivacyRights", linkTarget: "http://www.oracle.com/us/legal/privacy/index.html" },
     ];
     // release the application bootstrap busy state
-    Context.getPageContext().getBusyContext().applicationBootstrapComplete();        
+    Context.getPageContext().getBusyContext().applicationBootstrapComplete();
   }
 
   announcementHandler = (event: any): void => {

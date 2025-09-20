@@ -1,0 +1,25 @@
+<!--
+  Copyright (c) 2015, 2025, Oracle and/or its affiliates.
+  Licensed under The Universal Permissive License (UPL), Version 1.0
+  as shown at https://oss.oracle.com/licenses/upl/
+
+-->
+<span class="player">
+  <span class="player-symbol"><oj-bind-text value="[[ symbol ]]"></oj-bind-text></span>
+  <oj-input-text
+    id="playerName"
+    class="player-name player-name-input"
+    value="{{ name }}"
+    readonly="[[ !isEditing() ]]">
+  </oj-input-text>
+  <oj-button
+    class="player-button"
+    chroming="borderless"
+    on-oj-action="[[ editHandler ]]">
+    <oj-bind-text data-bind="text:
+      isEditing()
+      ? 'Save'
+      : 'Edit'"
+    ></oj-bind-text>
+  </oj-button>
+</span>

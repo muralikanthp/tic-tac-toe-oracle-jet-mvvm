@@ -10,3 +10,6 @@ To Install
 
 To Run
 `npx ojet serve`
+
+To Build
+`npx ojet build`

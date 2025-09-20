@@ -1,0 +1,81 @@
+<!--
+ Copyright (c) 2014, 2025, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding tic-tac-toe">
+  <header>
+    <img class="oj-icon tic-tac-toe-logo" title="Game Logo" alt="Game Logo"></img>
+    <h1>Tic-Tac-Toe</h1>
+  </header>
+  <div class="game-container">
+    <ol id="players" class="highlight-player">
+      <li :class="[[ activePlayer() === 'X' ? 'active' : undefined ]]">
+        <player-info symbol="X" name="[[ playerX ]]" on-name-change="{{ nameChangeAction }}" >
+        </player-info>
+        <div class="player-score-container">
+          <span class="player-score-label">Score</span>
+          <span class="player-score-value"><oj-bind-text value="[[ scoreX ]]"></oj-bind-text></span>
+        </div>
+      </li>
+      <li :class="[[ activePlayer() === 'O' ? 'active' : undefined ]]">
+        <player-info symbol="O" name="[[ playerO ]]" on-name-change="{{ nameChangeAction }}">
+        </player-info>
+        <div class="player-score-container">
+          <span class="player-score-label">Score</span>
+          <span class="player-score-value"><oj-bind-text value="[[ scoreO ]]"></oj-bind-text></span>
+        </div>
+      </li>
+    </ol>
+
+
+    <oj-bind-if test="[[ gameOver ]]">
+      <div id="game-over">
+        <h2>GameOver</h2>
+        <oj-bind-if test="[[ isdraw ]]">
+          <p>It's Draw</p>
+        </oj-bind-if>
+        <oj-bind-if test="[[ !isdraw() ]]">
+          <p>
+            <span><oj-bind-text value="[[ winnerName ]]"></oj-bind-text></span>
+            Won
+          </p>
+        </oj-bind-if>
+        <oj-button
+          on-oj-action="[[ restart ]]"
+          chroming="solid" class="restart-button">
+          <span>Restart</span>
+        </oj-button>
+      </div>
+    </oj-bind-if>
+
+    <ol id="game-board">
+      <oj-bind-for-each data="[[ gameBoard ]]">
+        <template data-oj-as="row">
+          <li>
+            <oj-bind-for-each data="[[ row.data ]]">
+              <template data-oj-as="col">
+                <oj-button
+                  disabled="[[ col.data !== null || gameOver ]]"
+                  on-oj-action="[[ () => selectTile(row.index, col.index) ]]"
+                  chroming="solid" class="game-board-button">
+                  <span><oj-bind-text value="[[ col.data ]]"></oj-bind-text></span>
+                </oj-button>
+              </template>
+            </oj-bind-for-each>
+          </li>
+        </template>
+      </oj-bind-for-each>
+    </ol>
+  </div>
+
+  <ol id="log">
+    <oj-bind-for-each data="[[ gameTurns ]]">
+      <template data-oj-as="turn">
+        <li>
+          <oj-bind-text value="[[ turn.data.player + ' selected ' + turn.data.square.row + ',' + turn.data.square.col]]"></oj-bind-text>
+        </li>
+      </template>
+    </oj-bind-for-each>
+  </ol>
+</div>

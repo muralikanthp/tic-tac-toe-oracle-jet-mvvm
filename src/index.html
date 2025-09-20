@@ -27,19 +27,19 @@
   ***************************** IMPORTANT INFORMATION ************************************ -->
 <html lang="en-us">
   <head>
-    <title>Oracle JET Starter Template - Web Nav Drawer</title>
+    <title>Mini Games</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
     <link rel="icon" href="css/images/JET-Favicon-Red-32x32.png" type="image/x-icon" />
 
     <!-- This is the main css file for the default theme -->
-		<!-- injector:theme -->
-		<!-- endinjector -->
+    <!-- injector:theme -->
+    <!-- endinjector -->
 
     <!-- This contains icon fonts used by the starter template -->
-		<!-- injector:font -->
-		<!-- endinjector:font -->
+    <!-- injector:font -->
+    <!-- endinjector:font -->
 
     <!-- This is where you would add any app specific styling -->
     <link rel="stylesheet" href="css/app.css" type="text/css"/>
@@ -75,7 +75,7 @@
         on-opened-changed="[[openedChangedHandler]]"
       >
         <oj-navigation-list id="navDrawerList"
-                            data="[[navDataProvider]]"                  
+                            data="[[navDataProvider]]"
                             item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
                             on-click="[[toggleDrawer]]"
                             selection="{{selection.path}}">
@@ -97,8 +97,8 @@
                 <span>Application Navigation</span>
               </oj-button>
             </div>
-            <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
-              <img class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></img>
+            <div class="oj-flex-bar-middle oj-sm-align-items-center">
+              <img class="oj-icon mini-games-logo" title="Mini Games Logo" alt="Mini Games Logo"></img>
               <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name"><oj-bind-text value="[[appName]]"></oj-bind-text></h1>
             </div>
             <div class="oj-flex-bar-end">
@@ -151,8 +151,8 @@
     </div>
 
     <!-- This injects script tags for the main javascript files -->
-		<!-- injector:scripts -->
-		<!-- endinjector -->
+    <!-- injector:scripts -->
+    <!-- endinjector -->
 
   </body>
 
